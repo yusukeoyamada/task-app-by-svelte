@@ -1,7 +1,5 @@
 - 「Svelte.js 勉強会」使用プロジェクト
-
   - 各々のプロジェクトは、基本的に、以下コマンドで作成し、サーバーを立ち上げしている(「myapp」部分がプロジェクト名)。
-
     - `npm create vite@latest myapp -- --template svelte`
     - `npm install` (「`cd myapp`」 後に)
     - `npm run dev`
