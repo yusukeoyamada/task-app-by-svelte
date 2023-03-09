@@ -1,24 +1,25 @@
 <script>
-  import { toDoItems } from "../store.js"
-  import { onMount } from "svelte"
+  import { toDoItems } from "../stores/store.js";
+  import { onMount } from "svelte";
 
   // Props(Properties)
     // exportキーワードを使用して変数を宣言するだけで、データを他のコンポーネントに渡すことが
-  export let userName
+  export let userName;
 
-  let newItem = ""
-  let newItemInputForm = null
+  let newItem = "";
+  let newItemInputForm = null;
 
   onMount(() => {
     newItemInputForm.focus()
-  })
+  });
 
   function addToList() {
-    // Auto subscriptionを使うと、$toDoItemsのように、状態の変数の前に$を付け加えるだけで、
-    // 自動的に変数の状態変化の通知を受け取ることが
-    $toDoItems = [...$toDoItems, {text: newItem, status: false}]
-    newItem = ""
-  }
+    // 「$」は、「Auto subscription」の役割を担っており、
+    // $toDoItemsのように、状態の変数の前に「$」を付け加えるだけで、
+    // 自動的に、状態が保存された変数の値の変更を反映してくれるように。
+    $toDoItems = [...$toDoItems, {text: newItem, status: false}];
+    newItem = "";
+  };
 </script>
 
 <!-- bind:thisディレクティブは、渡された変数に要素のDOMノードへの参照を設定 -->
