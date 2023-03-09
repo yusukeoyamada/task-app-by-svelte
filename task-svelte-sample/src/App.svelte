@@ -9,6 +9,7 @@
 
   // リアクティブ宣言「$:」を使用して
   // lastName・firstNameとfullNameを同期させる
+    // リアクティブは、代入がトリガーに。代入により、その変更をコンパイラに教える
   $: fullName = lastName + " " + firstName;
 
   function handleSubmit() {
